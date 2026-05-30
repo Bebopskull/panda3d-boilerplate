@@ -1,18 +1,26 @@
 # panda3d-boilerplate
 
-Generator script for new Panda3D projects.
+Cross-platform generator for new Panda3D projects.
+
+## Requirements
+
+- Python 3.8+ (anything that runs Panda3D will do)
 
 ## Usage
 
 ```bash
-./create-panda3d-project.sh /path/to/my-game
+git clone https://github.com/Bebopskull/panda3d-boilerplate.git
+cd panda3d-boilerplate
+python create.py /path/to/my-game
 ```
 
-Optionally pass a custom project name (defaults to the directory name):
+Optionally pass a display name (defaults to the directory name):
 
 ```bash
-./create-panda3d-project.sh /path/to/my-game "My Awesome Game"
+python create.py /path/to/my-game "My Awesome Game"
 ```
+
+Works on Linux, macOS, and Windows.
 
 ## What it creates
 
@@ -34,7 +42,7 @@ my-game/
 ├── requirements.txt         # panda3d
 ├── .gitignore
 ├── README.md
-└── run.sh
+└── run.sh                   # Linux/macOS launcher
 ```
 
 ## Next steps after generation
@@ -42,7 +50,7 @@ my-game/
 ```bash
 cd /path/to/my-game
 python3 -m venv .venv
-source .venv/bin/activate
+source .venv/bin/activate         # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
-./run.sh
+python src/main.py
 ```
