@@ -8,6 +8,7 @@ from pathlib import Path
 
 PLACEHOLDER = "{{PROJECT_NAME}}"
 SUBSTITUTE_EXTENSIONS = {".py", ".md", ".prc", ".sh", ".txt"}
+DOTFILE_RENAMES = {"gitignore": ".gitignore", "gitkeep": ".gitkeep"}
 
 
 def main() -> int:
@@ -47,6 +48,10 @@ def main() -> int:
             text = path.read_text(encoding="utf-8")
             if PLACEHOLDER in text:
                 path.write_text(text.replace(PLACEHOLDER, project_name), encoding="utf-8")
+
+    for path in list(target.rglob("*")):
+        if path.is_file() and path.name in DOTFILE_RENAMES:
+            path.rename(path.with_name(DOTFILE_RENAMES[path.name]))
 
     run_sh = target / "run.sh"
     if run_sh.exists():

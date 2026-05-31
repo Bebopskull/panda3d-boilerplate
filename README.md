@@ -1,26 +1,50 @@
 # panda3d-boilerplate
 
-Cross-platform generator for new Panda3D projects.
+Cross-platform generator for new Panda3D projects. Installs as a global `mkpanda` command.
 
-## Requirements
+## Install
 
-- Python 3.8+ (anything that runs Panda3D will do)
-
-## Usage
+Requires Python 3.8+ and [pipx](https://pipx.pypa.io/) (recommended) or pip.
 
 ```bash
-git clone https://github.com/Bebopskull/panda3d-boilerplate.git
-cd panda3d-boilerplate
-python create.py /path/to/my-game
+pipx install git+https://github.com/Bebopskull/panda3d-boilerplate.git
 ```
 
-Optionally pass a display name (defaults to the directory name):
+Or with pip + venv:
 
 ```bash
-python create.py /path/to/my-game "My Awesome Game"
+python3 -m pip install --user git+https://github.com/Bebopskull/panda3d-boilerplate.git
 ```
 
-Works on Linux, macOS, and Windows.
+## Use
+
+```bash
+mkpanda /path/to/my-game
+```
+
+Optional second argument sets the display name (defaults to the directory name):
+
+```bash
+mkpanda /path/to/my-game "My Awesome Game"
+```
+
+## Update
+
+```bash
+pipx upgrade panda3d-boilerplate
+```
+
+Or to force-reinstall the latest from GitHub:
+
+```bash
+pipx install --force git+https://github.com/Bebopskull/panda3d-boilerplate.git
+```
+
+## Uninstall
+
+```bash
+pipx uninstall panda3d-boilerplate
+```
 
 ## What it creates
 
@@ -45,7 +69,7 @@ my-game/
 └── run.sh                   # Linux/macOS launcher
 ```
 
-## Next steps after generation
+## Next steps in the generated project
 
 ```bash
 cd /path/to/my-game
@@ -54,3 +78,24 @@ source .venv/bin/activate         # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 python src/main.py
 ```
+
+## Contributing
+
+Open to PRs. The repo layout:
+
+- `panda3d_boilerplate/cli.py` — the `mkpanda` entry point
+- `panda3d_boilerplate/templates/` — files copied into new projects (with `{{PROJECT_NAME}}` substitution)
+- `pyproject.toml` — packaging metadata; bump `version` for releases
+
+To test changes locally:
+
+```bash
+git clone https://github.com/Bebopskull/panda3d-boilerplate.git
+cd panda3d-boilerplate
+pipx install --force .
+mkpanda /tmp/test-project "Test"
+```
+
+## License
+
+MIT

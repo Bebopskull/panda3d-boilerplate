@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "panda3d-boilerplate"
+version = "0.1.0"
+description = "Cross-platform generator for new Panda3D projects."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Nelson Eduardo Vasquez", email = "nelson.eduardo.vasquez@gmail.com"},
+]
+keywords = ["panda3d", "boilerplate", "scaffold", "gamedev", "template"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Games/Entertainment",
+    "Topic :: Software Development :: Code Generators",
+]
+
+[project.scripts]
+mkpanda = "panda3d_boilerplate.cli:main"
+
+[project.urls]
+Repository = "https://github.com/Bebopskull/panda3d-boilerplate"
+Issues = "https://github.com/Bebopskull/panda3d-boilerplate/issues"
+
+[tool.setuptools.packages.find]
+include = ["panda3d_boilerplate*"]
+
+[tool.setuptools.package-data]
+panda3d_boilerplate = ["templates/**/*"]
