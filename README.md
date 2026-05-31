@@ -8,6 +8,7 @@ Requires Python 3.8+ and [pipx](https://pipx.pypa.io/) (recommended) or pip.
 
 ```bash
 pipx install git+https://github.com/Bebopskull/panda3d-boilerplate.git
+# once published to PyPI: pipx install mkpanda
 ```
 
 Or with pip + venv:
@@ -31,7 +32,7 @@ mkpanda /path/to/my-game "My Awesome Game"
 ## Update
 
 ```bash
-pipx upgrade panda3d-boilerplate
+pipx upgrade mkpanda
 ```
 
 Or to force-reinstall the latest from GitHub:
@@ -43,7 +44,7 @@ pipx install --force git+https://github.com/Bebopskull/panda3d-boilerplate.git
 ## Uninstall
 
 ```bash
-pipx uninstall panda3d-boilerplate
+pipx uninstall mkpanda
 ```
 
 ## What it creates

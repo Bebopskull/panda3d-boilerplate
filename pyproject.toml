@@ -3,9 +3,9 @@ requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "panda3d-boilerplate"
+name = "mkpanda"
 version = "0.1.0"
-description = "Cross-platform generator for new Panda3D projects."
+description = "Cross-platform generator (mkpanda command) for new Panda3D projects."
 readme = "README.md"
 requires-python = ">=3.8"
 license = {text = "MIT"}
