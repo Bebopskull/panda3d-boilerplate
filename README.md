@@ -75,7 +75,7 @@ my-game/
 │   └── shaders/
 ├── config/config.prc        # Window, audio, model paths
 ├── tests/
-├── requirements.txt         # panda3d
+├── requirements.txt         # project-specific deps (Panda3D is expected to be system-installed)
 ├── .gitignore
 ├── README.md
 ├── run.sh                   # Linux/macOS launcher
@@ -84,9 +84,11 @@ my-game/
 
 ## Next steps in the generated project
 
+Panda3D must already be installed on your system (e.g. `pip install --user panda3d`). The generated venv uses `--system-site-packages` so it inherits that install instead of re-downloading Panda3D per project.
+
 ```bash
 cd /path/to/my-game
-python3 -m venv .venv
+python3 -m venv --system-site-packages .venv
 source .venv/bin/activate         # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 python src/main.py

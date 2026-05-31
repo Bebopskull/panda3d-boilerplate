@@ -58,9 +58,9 @@ def main() -> int:
         run_sh.chmod(0o755)
 
     print(
-        f"\nDone. Next steps:\n\n"
+        f"\nDone. Next steps (Panda3D expected to be system-installed):\n\n"
         f"  cd {target}\n"
-        f"  python3 -m venv .venv\n"
+        f"  python3 -m venv --system-site-packages .venv\n"
         f"  source .venv/bin/activate   # Windows: .venv\\Scripts\\activate\n"
         f"  pip install -r requirements.txt\n"
         f"  python src/main.py\n"

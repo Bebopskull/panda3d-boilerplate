@@ -1,1 +1,2 @@
-panda3d>=1.10.13
+# Panda3D is expected to be installed on the host (system-site-packages venv).
+# Add project-specific dependencies below.
