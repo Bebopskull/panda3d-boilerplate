@@ -78,7 +78,8 @@ my-game/
 ├── requirements.txt         # panda3d
 ├── .gitignore
 ├── README.md
-└── run.sh                   # Linux/macOS launcher
+├── run.sh                   # Linux/macOS launcher
+└── run.bat                  # Windows launcher
 ```
 
 ## Next steps in the generated project

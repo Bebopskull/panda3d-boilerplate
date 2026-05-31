@@ -4,16 +4,30 @@ Panda3D project.
 
 ## Setup
 
+Linux / macOS:
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
+Windows:
+```cmd
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+```
+
 ## Run
 
+Linux / macOS:
 ```bash
 ./run.sh
+```
+
+Windows:
+```cmd
+run.bat
 ```
 
 ## Structure
